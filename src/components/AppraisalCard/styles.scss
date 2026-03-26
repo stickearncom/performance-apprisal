@@ -1,0 +1,23 @@
+.appraisal-card {
+  padding: 20px;
+}
+
+.appraisal-card-footer {
+  padding-top: 12px;
+}
+
+@media (min-width: 40rem) {
+  .appraisal-card {
+    padding: 28px;
+  }
+
+  .appraisal-card-footer {
+    padding-top: 16px;
+  }
+}
+
+@media (min-width: 64rem) {
+  .appraisal-card {
+    padding: 32px;
+  }
+}
