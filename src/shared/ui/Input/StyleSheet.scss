@@ -1,0 +1,23 @@
+.ui-input {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #f9fafb;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #111827;
+  outline: none;
+  transition: color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.ui-input::placeholder {
+  color: #9ca3af;
+}
+
+.ui-input:focus-visible {
+  border-color: #93c5fd;
+  box-shadow: 0 0 0 4px rgba(191, 219, 254, 0.9);
+}

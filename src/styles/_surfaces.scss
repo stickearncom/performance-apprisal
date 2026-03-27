@@ -1,0 +1,30 @@
+@mixin panel($radius: 28px, $background: #ffffff, $border: #e2e8f0, $shadow: 0 18px 60px rgba(15, 23, 42, 0.06)) {
+  border: 1px solid $border;
+  border-radius: $radius;
+  background: $background;
+  box-shadow: $shadow;
+}
+
+@mixin card($radius: 18px, $background: #f8fafc, $border: #e2e8f0) {
+  border: 1px solid $border;
+  border-radius: $radius;
+  background: $background;
+}
+
+@mixin empty-state($radius: 24px) {
+  @include card($radius);
+  border-style: dashed;
+}
+
+@mixin pill($background, $color, $border: transparent) {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid $border;
+  border-radius: 999px;
+  padding: 6px 12px;
+  background: $background;
+  color: $color;
+  font-size: 12px;
+  font-weight: 600;
+}

@@ -1,0 +1,170 @@
+@use '../../../../styles/surfaces' as surfaces;
+@use '../../../../styles/typography' as typography;
+
+.setup-view {
+  display: grid;
+  gap: 24px;
+}
+
+.setup-view__column {
+  display: grid;
+  gap: 24px;
+}
+
+.setup-view__panel {
+  @include surfaces.panel();
+  padding: 24px;
+}
+
+.setup-view__panel-header,
+.setup-view__item-content,
+.setup-view__cycle-content,
+.setup-view__exception-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.setup-view__eyebrow,
+.setup-view__summary-label {
+  @include typography.eyebrow();
+}
+
+.setup-view__panel-title,
+.setup-view__item-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.setup-view__panel-title {
+  margin-top: 8px;
+}
+
+.setup-view__panel-copy,
+.setup-view__item-copy {
+  margin-top: 4px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #64748b;
+}
+
+.setup-view__panel-icon {
+  width: 20px;
+  height: 20px;
+  color: #94a3b8;
+}
+
+.setup-view__card-list,
+.setup-view__summary-grid,
+.setup-view__template-grid {
+  margin-top: 20px;
+  display: grid;
+  gap: 12px;
+}
+
+.setup-view__item-card,
+.setup-view__cycle-card,
+.setup-view__summary-card,
+.setup-view__exception-card,
+.setup-view__empty-state {
+  @include surfaces.card();
+  padding: 16px;
+}
+
+.setup-view__item-pill,
+.setup-view__cycle-pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.setup-view__item-pill {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+.setup-view__cycle-card {
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.setup-view__cycle-card:hover {
+  transform: translateY(-1px);
+  border-color: #cbd5e1;
+}
+
+.setup-view__cycle-card.is-active {
+  border-color: #0f172a;
+  background: #0f172a;
+  color: #fff;
+}
+
+.setup-view__cycle-card.is-active .setup-view__item-copy,
+.setup-view__cycle-card.is-active .setup-view__item-title {
+  color: #fff;
+}
+
+.setup-view__cycle-pill.is-published {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+.setup-view__cycle-pill.is-draft {
+  background: #fffbeb;
+  color: #b45309;
+}
+
+.setup-view__cycle-card.is-active .setup-view__cycle-pill.is-published {
+  background: rgba(16, 185, 129, 0.18);
+  color: #d1fae5;
+}
+
+.setup-view__cycle-card.is-active .setup-view__cycle-pill.is-draft {
+  background: rgba(245, 158, 11, 0.18);
+  color: #fde68a;
+}
+
+.setup-view__action-row {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.setup-view__summary-value {
+  margin-top: 8px;
+  font-size: 32px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.setup-view__empty-state {
+  border-style: dashed;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #64748b;
+}
+
+.setup-view__exception-card {
+  border-color: #fde68a;
+  background: #fffbeb;
+}
+
+@media (min-width: 768px) {
+  .setup-view__summary-grid,
+  .setup-view__template-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
+  .setup-view {
+    grid-template-columns: 0.95fr 1.05fr;
+  }
+}

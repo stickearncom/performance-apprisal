@@ -1,0 +1,213 @@
+@use '../../../../styles/surfaces' as surfaces;
+@use '../../../../styles/typography' as typography;
+
+.dashboard-view {
+  display: grid;
+  gap: 24px;
+}
+
+.dashboard-view__hero-card,
+.dashboard-view__panel {
+  @include surfaces.panel(28px, rgba(255, 255, 255, 0.95), #e2e8f0, 0 18px 60px rgba(15, 23, 42, 0.08));
+}
+
+.dashboard-view__hero-content,
+.dashboard-view__panel {
+  padding: 24px;
+}
+
+.dashboard-view__hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dashboard-view__eyebrow {
+  @include typography.eyebrow();
+}
+
+.dashboard-view__title {
+  margin-top: 8px;
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+.dashboard-view__description,
+.dashboard-view__panel-description,
+.dashboard-view__progress-copy,
+.dashboard-view__admin-reviewer {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #64748b;
+}
+
+.dashboard-view__window-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  background: #f8fafc;
+  padding: 16px;
+}
+
+.dashboard-view__window-label,
+.dashboard-view__metric-label,
+.dashboard-view__admin-type {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #94a3b8;
+}
+
+.dashboard-view__window-value {
+  margin-top: 4px;
+  font-size: 14px;
+  color: #334155;
+}
+
+.dashboard-view__metrics-grid,
+.dashboard-view__content-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.dashboard-view__metric-card {
+  border-radius: 24px;
+  border: 1px solid transparent;
+  padding: 20px;
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+}
+
+.dashboard-view__metric-card--sky {
+  border-color: #dbeafe;
+  background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
+}
+
+.dashboard-view__metric-card--emerald {
+  border-color: #d1fae5;
+  background: linear-gradient(135deg, #ecfdf5 0%, #ffffff 100%);
+}
+
+.dashboard-view__metric-card--amber {
+  border-color: #fde68a;
+  background: linear-gradient(135deg, #fffbeb 0%, #ffffff 100%);
+}
+
+.dashboard-view__metric-card--rose {
+  border-color: #fecdd3;
+  background: linear-gradient(135deg, #fff1f2 0%, #ffffff 100%);
+}
+
+.dashboard-view__metric-header,
+.dashboard-view__panel-header,
+.dashboard-view__progress-header,
+.dashboard-view__admin-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.dashboard-view__metric-icon {
+  width: 20px;
+  height: 20px;
+  color: #64748b;
+}
+
+.dashboard-view__metric-value {
+  margin-top: 24px;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.dashboard-view__badge,
+.dashboard-view__status-pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.dashboard-view__badge {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.dashboard-view__progress-list,
+.dashboard-view__admin-list {
+  margin-top: 24px;
+  display: grid;
+  gap: 16px;
+}
+
+.dashboard-view__progress-card,
+.dashboard-view__admin-card {
+  @include surfaces.card();
+  padding: 16px;
+}
+
+.dashboard-view__progress-title,
+.dashboard-view__panel-title,
+.dashboard-view__admin-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.dashboard-view__progress-track {
+  margin-top: 12px;
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e2e8f0;
+}
+
+.dashboard-view__progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: #0f172a;
+}
+
+.dashboard-view__admin-reviewer {
+  margin-top: 12px;
+}
+
+.dashboard-view__admin-reviewer span {
+  color: #334155;
+  font-weight: 600;
+}
+
+.dashboard-view__status-pill {
+  background: #fffbeb;
+  color: #b45309;
+}
+
+.dashboard-view__admin-actions {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+@media (min-width: 768px) {
+  .dashboard-view__metrics-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
+  .dashboard-view__metrics-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .dashboard-view__content-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+
+  .dashboard-view__hero-content {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}

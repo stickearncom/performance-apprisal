@@ -1,0 +1,224 @@
+@use '../../styles/surfaces' as surfaces;
+@use '../../styles/typography' as typography;
+
+.app-shell {
+  min-height: 100vh;
+  color: #0f172a;
+  background:
+    radial-gradient(circle at top left, rgba(14, 165, 233, 0.12), transparent 24%),
+    linear-gradient(180deg, #f8fbff 0%, #f3f6fb 42%, #eef2f8 100%);
+}
+
+.app-shell__layout {
+  max-width: 1600px;
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  gap: 24px;
+  padding: 20px 16px;
+}
+
+.app-shell__sidebar {
+  display: none;
+  width: 288px;
+  flex-shrink: 0;
+}
+
+.app-shell__sidebar-panel {
+  @include surfaces.panel(32px, #020617, rgba(255, 255, 255, 0.6), 0 25px 80px rgba(15, 23, 42, 0.24));
+  position: sticky;
+  top: 20px;
+  background: #020617;
+  color: #fff;
+  padding: 24px;
+}
+
+.app-shell__sidebar-eyebrow,
+.app-shell__hero-eyebrow,
+.app-shell__cycle-label,
+.app-shell__breadcrumb {
+  @include typography.eyebrow();
+}
+
+.app-shell__sidebar-eyebrow,
+.app-shell__cycle-label {
+  color: #94a3b8;
+}
+
+.app-shell__sidebar-title {
+  margin-top: 12px;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+.app-shell__sidebar-description {
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #cbd5e1;
+}
+
+.app-shell__nav {
+  margin-top: 32px;
+  display: grid;
+  gap: 12px;
+}
+
+.app-shell__nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 18px;
+  padding: 14px 16px;
+  color: #cbd5e1;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.05);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.app-shell__nav-link:hover,
+.app-shell__nav-link.is-active {
+  background: #fff;
+  color: #020617;
+}
+
+.app-shell__nav-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.app-shell__nav-label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.app-shell__cycle-card {
+  margin-top: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 16px;
+}
+
+.app-shell__cycle-name {
+  margin-top: 8px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.app-shell__cycle-status {
+  margin-top: 4px;
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+.app-shell__main {
+  flex: 1;
+}
+
+.app-shell__content {
+  display: grid;
+  gap: 24px;
+}
+
+.app-shell__hero {
+  @include surfaces.panel(32px, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.7), 0 18px 60px rgba(15, 23, 42, 0.08));
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+}
+
+.app-shell__hero-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+}
+
+.app-shell__breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  color: #94a3b8;
+}
+
+.app-shell__breadcrumb-item {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.app-shell__breadcrumb-separator {
+  color: #cbd5e1;
+}
+
+.app-shell__hero-eyebrow {
+  margin-top: 12px;
+  color: #94a3b8;
+}
+
+.app-shell__hero-title {
+  margin-top: 8px;
+  font-size: 32px;
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+.app-shell__hero-description {
+  margin-top: 8px;
+  max-width: 48rem;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #64748b;
+}
+
+.app-shell__hero-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.app-shell__cycle-select {
+  height: 44px;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  background: #f8fafc;
+  padding: 0 16px;
+  font-size: 14px;
+  outline: none;
+}
+
+.app-shell__cycle-select:focus {
+  border-color: #7dd3fc;
+  box-shadow: 0 0 0 4px rgba(125, 211, 252, 0.35);
+}
+
+.app-shell__mobile-tabs {
+  display: block;
+}
+
+@media (min-width: 1024px) {
+  .app-shell__layout {
+    padding: 20px 24px;
+  }
+
+  .app-shell__sidebar {
+    display: block;
+  }
+
+  .app-shell__hero-body {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .app-shell__hero-controls {
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .app-shell__mobile-tabs {
+    display: none;
+  }
+}

@@ -1,0 +1,187 @@
+@use '../../../../styles/surfaces' as surfaces;
+@use '../../../../styles/typography' as typography;
+
+.dictionary-detail-panel {
+  @include surfaces.panel();
+  display: grid;
+  gap: 24px;
+  min-height: 640px;
+  padding: 32px;
+}
+
+.dictionary-detail-panel__header,
+.dictionary-detail-panel__rating-summary,
+.dictionary-detail-panel__breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dictionary-detail-panel__header {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.dictionary-detail-panel__badge-row,
+.dictionary-detail-panel__rating-switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.dictionary-detail-panel__eyebrow,
+.dictionary-detail-panel__section-label {
+  @include typography.eyebrow();
+}
+
+.dictionary-detail-panel__breadcrumb {
+  flex-wrap: wrap;
+  gap: 8px;
+  color: #94a3b8;
+}
+
+.dictionary-detail-panel__breadcrumb-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.dictionary-detail-panel__breadcrumb-separator {
+  color: #cbd5e1;
+}
+
+.dictionary-detail-panel__title {
+  margin-top: 8px;
+  max-width: 18ch;
+  font-size: 36px;
+  line-height: 1.08;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.dictionary-detail-panel__subtitle,
+.dictionary-detail-panel__context-intro {
+  @include typography.body-copy();
+}
+
+.dictionary-detail-panel__subtitle {
+  margin-top: 10px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.dictionary-detail-panel__context-intro {
+  max-width: 72ch;
+}
+
+.dictionary-detail-panel__copy,
+.dictionary-detail-panel__rating-label,
+.dictionary-detail-panel__goal-navigation-subtitle,
+.dictionary-detail-panel__rating-option-label,
+.dictionary-detail-panel__context-summary {
+  @include typography.body-copy();
+}
+
+.dictionary-detail-panel__context-summary {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.dictionary-detail-panel__copy {
+  max-width: 72ch;
+}
+
+.dictionary-detail-panel__section {
+  display: grid;
+  gap: 14px;
+}
+
+.dictionary-detail-panel__tabs--secondary {
+  margin-top: -4px;
+}
+
+.dictionary-detail-panel__tabs--tertiary {
+  margin-top: -6px;
+}
+
+.dictionary-detail-panel__rating-option,
+.dictionary-detail-panel__goal-navigation-button,
+.dictionary-detail-panel__example-card {
+  @include surfaces.card(18px, #f8fafc, #e2e8f0);
+}
+
+.dictionary-detail-panel__rating-option,
+.dictionary-detail-panel__goal-navigation-button {
+  padding: 14px;
+  text-align: left;
+}
+
+.dictionary-detail-panel__rating-option.is-active {
+  border-color: #0f172a;
+  background: #0f172a;
+  color: #ffffff;
+}
+
+.dictionary-detail-panel__rating-option-value,
+.dictionary-detail-panel__goal-navigation-title {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.dictionary-detail-panel__rating-option.is-active .dictionary-detail-panel__rating-option-label {
+  color: #cbd5e1;
+}
+
+.dictionary-detail-panel__example-card {
+  display: grid;
+  gap: 12px;
+  padding: 24px;
+}
+
+.dictionary-detail-panel__example-list {
+  display: grid;
+  gap: 10px;
+  padding-left: 18px;
+  color: #475569;
+}
+
+.dictionary-detail-panel__section--navigation {
+  border-top: 1px solid #f1f5f9;
+  padding-top: 20px;
+}
+
+.dictionary-detail-panel__goal-navigation-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.dictionary-detail-panel__goal-navigation-icon {
+  display: inline-flex;
+  margin-bottom: 8px;
+  color: #64748b;
+}
+
+.dictionary-detail-panel__goal-navigation-button--align-end {
+  text-align: right;
+}
+
+.dictionary-detail-panel__goal-navigation-spacer {
+  min-height: 1px;
+}
+
+@media (max-width: 960px) {
+  .dictionary-detail-panel {
+    display: none;
+  }
+}
+
+@media (min-width: 960px) {
+  .dictionary-detail-panel {
+    position: sticky;
+    top: 116px;
+  }
+}
